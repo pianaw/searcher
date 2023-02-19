@@ -20,7 +20,7 @@ public class Crawler {
         int i = 1;
         for (String relativePath : sitesRelative) {
             if (i == 101) {
-                return;
+                break;
             }
             String absolutePath = Main.SITE + relativePath;
             downloadPage(absolutePath, this::handleDocForText);
