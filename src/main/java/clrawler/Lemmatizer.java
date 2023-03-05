@@ -31,6 +31,35 @@ public class Lemmatizer {
         }
     }
 
+    // Записываем все леммы со всех страниц сайта
+    public void lemmatizeMultiple() {
+        File directory = new File(Utils.WORDS_TOKEN_DIR);
+        File[] files = directory.listFiles();
+        if (files == null) return;
+        int i = 1;
+        for (File file : files) {
+            List<String> tokens = new ArrayList<>();
+            try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+                LuceneMorphology russianLuceneMorphology = new RussianLuceneMorphology();
+                String line;
+                while ((line = br.readLine()) != null) {
+                    try {
+                        List<String> wordBaseForms = russianLuceneMorphology.getNormalForms(line);
+                        tokens.addAll(wordBaseForms);
+                    } catch (WrongCharaterException | ArrayIndexOutOfBoundsException ignored) {}
+                }
+                Utils.writeToFileLineByLine(
+                        new File(Utils.generateFileName(Utils.WORDS_LEMMAS_DIR, i)),
+                        tokens,
+                        false
+                );
+                i++;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public void groupLemmasByTokens() {
         Set<String> uniqueLemmas = new HashSet<>();
         // Берем все уникальные лемммы
