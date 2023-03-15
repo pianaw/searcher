@@ -20,7 +20,10 @@ public class Main {
 //        lemmatizer.lemmatizeMultiple();
 //        InvertedIndexer invertedIndexer = new InvertedIndexer();
 //        invertedIndexer.execute();
-        BooleanSearcher booleanSearch = new BooleanSearcher();
-        booleanSearch.execute();
+//        BooleanSearcher booleanSearch = new BooleanSearcher();
+//        booleanSearch.execute();
+        // TASK 4
+        Counter counter = new Counter();
+        counter.countIndicators();
     }
 }

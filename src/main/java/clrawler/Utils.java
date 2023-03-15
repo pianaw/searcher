@@ -17,6 +17,10 @@ public class Utils {
     public static final String INDEXED_WORDS_FILE_PATH = "words/words_indexed.txt";
     public static final String WORDS_LEMMAS_DIR = "words-lemma";
     public static final String WORDS_TOKEN_DIR = "words-tokens";
+    public static final String IDFS_TOKENS_FILE_PATH = "words/idfs_tokens.txt";
+    public static final String IDFS_LEMMAS_FILE_PATH = "words/idfs_lemmas.txt";
+    public static final String TOKENS_COUNTERS_DIR = "token-counters";
+    public static final String LEMMAS_COUNTERS_DIR = "lemma-counters";
 
     public static String generateFileName(String dirName, Integer index) {
         return dirName.concat("/").concat(String.valueOf(index)).concat(".txt");
