@@ -54,7 +54,9 @@ public class Crawler {
     }
 
     private void handleDocForText(Document doc) {
-        if (Objects.isNull(doc)) {
+        if (Objects.isNull(doc) ||
+                Objects.isNull(doc.body()) ||
+                Objects.isNull(doc.body().text())) {
             return;
         }
 

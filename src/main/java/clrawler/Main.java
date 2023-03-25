@@ -22,8 +22,9 @@ public class Main {
 //        invertedIndexer.execute();
 //        BooleanSearcher booleanSearch = new BooleanSearcher();
 //        booleanSearch.execute();
-        // TASK 4
-        Counter counter = new Counter();
-        counter.countIndicators();
+//         TASK 4
+//        Counter counter = new Counter();
+//        counter.countIndicators();
+        SearchApplication.main(args);
     }
 }

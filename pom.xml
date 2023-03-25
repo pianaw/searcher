@@ -21,9 +21,8 @@
             <name>Repository for lemmatizer</name>
             <url>https://repo.cuba-platform.com/content/groups/work/</url>
         </repository>
-
-
     </repositories>
+
     <build>
         <plugins>
             <plugin>
@@ -33,6 +32,11 @@
                     <source>11</source>
                     <target>11</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.2.0</version>
             </plugin>
         </plugins>
     </build>
@@ -54,7 +58,15 @@
             <version>1.18.24</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>11</version>
+        </dependency>
     </dependencies>
-
-
 </project>
